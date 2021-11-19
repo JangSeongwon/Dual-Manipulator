@@ -13,8 +13,8 @@ Controllers Problem
 ## For ros_controllers.yaml
 # Simulation settings for using moveit_sim_controllers
 moveit_sim_hw_interface:
-  joint_model_group: arm_ver1
-  joint_model_group_pose: home_ver1
+  joint_model_group: mani1
+  joint_model_group_pose: home_mani1
 # Settings for ros_control_boilerplate control loop
 generic_hw_control_loop:
   loop_hz: 300
@@ -71,7 +71,7 @@ controller_list:
       - mani2_joint7
 
 robotic_arm_controller_ver1:
-  type: position_controllers/JointPositionController
+  type: position_controllers/con1
   joints:
     - mani1_joint1
     - mani1_joint2
@@ -117,7 +117,7 @@ robotic_arm_controller_ver1:
       i: 1
       i_clamp: 1
 robotic_arm_controller_ver2:
-  type: position_controllers/JointPositionController
+  type: position_controllers/con2
   joints:
     - mani2_joint1
     - mani2_joint2
