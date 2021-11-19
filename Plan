@@ -10,7 +10,7 @@ roslaunch final_gazebo robotic_arm_bringup_rviz.launch
 
 #Code for Input = 'end effector POS' in global scale
 
-
+rosrun move_robot dualarm_test.py
 
 
 
