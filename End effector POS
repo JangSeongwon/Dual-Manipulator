@@ -1,0 +1,16 @@
+
+Getting Pose
+
+#With new group created
+moveit::planning_interface::MoveGroup *group; 
+group = new moveit::planning_interface::MoveGroup("arm");
+group->setEndEffectorLink("hand_left");
+geometry_msgs::PoseStamped current_pose =
+group->getCurrentPose();
+
+#without
+moveit::planning_interface::MoveGroup group("your end-effector");
+group.getCurrentPose();
+
+
+
