@@ -1,9 +1,9 @@
 From File <final_gazebo>
 
-<Launch File>
+<Config File>
 Change all config files into mani1_config instead
 
-<Config File>
+<Launch File>
 robotic_arm_trajecory_controller.launch - mani1_config
 robotic_arm_world.launch - model mani1_config 
 robotic_arm_gazebo_states.launch - mani1_config for all
