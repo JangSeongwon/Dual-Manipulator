@@ -1,0 +1,14 @@
+From File <final_gazebo>
+
+<Launch File>
+Change all config files into mani1_config instead
+
+<Config File>
+robotic_arm_trajecory_controller.launch - mani1_config
+robotic_arm_world.launch - model mani1_config 
+robotic_arm_gazebo_states.launch - mani1_config for all
+rviz.launch - find dual_arm_config where it looks for 'moveit_planning_execution.launch'
+
+Controllers Problem
+
+
