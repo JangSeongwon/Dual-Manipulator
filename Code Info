@@ -4,17 +4,63 @@
 
 # Position Control : 
 
-pose_goal = geometry_msgs.msg.Pose()
-pose_goal.orientation.w = 1.0
-pose_goal.position.x = 0.4
-pose_goal.position.y = 0.1
-pose_goal.position.z = 0.4
+def go_to_state(self, Pose_goals):
 
-move_group.set_pose_target(pose_goal)
+    move_group = self.move_group
+
+    pose_goal = geometry_msgs.msg.Pose()
+
+    pose_goal.orientation.w = Pose_goals[0]
+    pose_goal.position.x = Pose_goals[1] 
+    pose_goal.position.y = Pose_goals[2]
+    pose_goal.position.z = Pose_goals[3]
+
+    move_group.set_pose_target(pose_goal)
+    plan = move_group.go(wait=True)
+
+    move_group.stop()
+
+    move_group.clear_pose_targets()
 
 
+###
 
 
+Pose_goals = np.array([
+
+        [1,1,0.1,0,0.4],
+        [1,1,0.1,0.1,0.2],
+        [1,1,-0.1,0.2,0.5],
+        [1,1,0.3,0.3,0.6],
+        
+      ])
+      print(Pose_goals)
+      raw_input() # Pressing Enters in these processes 
+
+      manipulator1.go_to_home_state()
+      print("done")
+      raw_input()
+
+      manipulator2.go_to_home_state()
+      print("done")
+      for i in range(len(Pose_goals)):
+        raw_input()
+        print(Pose_goals[i])
+        if Pose_goals[i][0] == 1:
+
+          manipulator1.go_to_state(Pose_goals[i][1:])
+          print(Pose_goals[i][1:])
+        elif Pose_goals[i][0] == 2:
+          manipulator2.go_to_state(Pose_goals[i][1:])
+          print(Pose_goals[i][1:])
+        elif Pose_goals[i][0] == 3: # gripper
+          if Pose_goals[i][1] == 1: # mani 1
+            if Pose_goals[i][2] == 0: # close 1
+              manipulator1.gripper_request(0.007)
+            else:
+              manipulator1.gripper_request(0.06)
+          else: # mani 2
+            if Pose_goals[i][2] == 0: # close 2
 
 
 
