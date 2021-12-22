@@ -1,0 +1,52 @@
+
+1. Inserting a new model into Gazebo
+    
+  a) Making CAD in stl file 
+  b) Turn file into .dae Using blender (Maybe only STL can be used, not sure)
+  c) Inserting model file 
+      directory : /home/.gazebo/models (ctrl+H)
+      mkdir ?? 
+      Put mesh, sdf, config file here
+      Reference : (https://ola-page.tistory.com/2)
+  d) Making SDF file
+  
+        <Basic Format for CAD import>
+
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <model name="box">
+    <pose>0 0 0  0 0 0</pose>
+    <static>true</static>
+    <link name="body">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+             <scale> 0.3 0.3 0.3 </scale>>
+             <uri>model://box/box.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
+
+  e) Making config file
+  
+          <Basic format>
+
+<?xml version="1.0"?>
+
+<model>
+  <name>box</name>
+  <version>1.0</version>
+  <sdf version="1.5">model.sdf</sdf>
+
+  <author>
+    <name>Optional: YOUR NAME</name>
+    <email>Optional: YOUR EMAIL</email>
+  </author>
+
+
+</model>
+
+
