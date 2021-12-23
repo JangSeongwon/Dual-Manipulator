@@ -1,0 +1,28 @@
+Computer - Xenomai => LAN communication
+computer to xenomai code : ssh nuc@ IP
+
+        <Computer>
+1. gedit ~/.bashrc
+    Since we want to use ROS Master from xenomai, we modify ROS_MASTER_URI into ' =http://192.168.0.18:11311 ' IP address of xenomai
+    For ROS_IP, use IP address from LAN PORT connected with xenomai
+
+          <NUC>
+1. roscore 
+2. From ethercat_test dualarm_ecat_ctrl_j.cpp : we need to modify #define NUMOWHEEL_DRIVE (#number)
+   + Use cm not as root 
+3. sudo -s : before running (3) 
+4. Home Position code : rosrun ethercat_test mani1_ecat_homing_j
+5. Moving real manipulator joints (Getting node using ethercat) : rosrun ethercat_test dualarm_ecat_ctrl_j 
+    + Inside this code, we can select from two subscriber : one from manipulator controller(computer) and one from NUC (arm1,2)arm
+    + We can check rostopic by runing rviz
++Made control codes : inside ethercast_test package
+
+
+
+
+
+
+
+
+
+
