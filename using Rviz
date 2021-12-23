@@ -1,0 +1,21 @@
+
+<Goal Tolerance error>
+
+1.Modify from moveit created package folder
+<ros_controllers.yaml>
+
+2. Add constraints for each joints
+
+constraints:
+  mani1_joint1: {goal: 0.1}
+  mani1_joint2: {goal: 0.1}
+  mani1_joint3: {goal: 0.1}
+  mani1_joint4: {goal: 0.1}
+  mani1_joint5: {goal: 0.1}
+  mani1_joint6: {goal: 0.1}
+  mani1_joint7: {goal: 0.1}
+  stopped_velocity_tolerance: 0
+
+
+
+
