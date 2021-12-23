@@ -17,6 +17,9 @@ computer to xenomai code : ssh nuc@ IP
     + We can check rostopic by runing rviz
 +Made control codes : inside ethercast_test package
 
+        <USB port check>
+dmesg \ grep USB
+
 
 
 
