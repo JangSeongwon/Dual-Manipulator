@@ -25,7 +25,7 @@ dmesg \ grep USB
    rostopic pub /arm2 mservo_msg/traj_id "traj:"
 
 7.gripper의 경우 각각 python script존재
-  
+  직접쏠때 얘는 service임
 
 
 
