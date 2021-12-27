@@ -20,8 +20,12 @@ computer to xenomai code : ssh nuc@ IP
         <USB port check>
 dmesg \ grep USB
 
+6. 토픽 직접 쏘기
+   dualarm_ecat_ctrl_j.cpp 수정 후
+   rostopic pub /arm2 mservo_msg/traj_id "traj:"
 
-
+7.gripper의 경우 각각 python script존재
+  
 
 
 
