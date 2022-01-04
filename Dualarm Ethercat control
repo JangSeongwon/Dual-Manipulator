@@ -22,10 +22,12 @@ dmesg \ grep USB
 
 6. 토픽 직접 쏘기
    dualarm_ecat_ctrl_j.cpp 수정 후
+   rosrun ethercat_test dualarm_ecat_ctrl_j.cpp
    rostopic pub /arm2 mservo_msg/traj_id "traj:"
 
 7.gripper의 경우 각각 python script존재
-  직접쏠때 얘는 service임
+  rosrun dx~ d~
+  rosservice call /gri g_dist 1,2
 
 
 
