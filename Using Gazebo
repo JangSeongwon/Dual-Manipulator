@@ -49,4 +49,6 @@
 
 </model>
 
+2. killing gazebo with terminal : killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient
 
+    add : alias killgazebo="killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient"
