@@ -52,3 +52,9 @@
 2. killing gazebo with terminal : killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient
 
     add : alias killgazebo="killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient"
+    
+    
+3. When running Gazebo, "  Can't open /home/??/catkin_ws/devel/share/gazebo/setup.sh "  error 
+    Go to cd /opt/ros/noetic/lib/gazebo_ros/???(scripts on the terminal)
+    and fix line(sudo gedit 'script name') " setup_path=$(pkg-config --variable=prefix gazebo)/share/gazebo/ " into " setup_path=/usr/share/gazebo "
+
